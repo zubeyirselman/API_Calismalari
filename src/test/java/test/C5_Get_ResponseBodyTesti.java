@@ -46,12 +46,3 @@ public class C5_Get_ResponseBodyTesti {
                     .body("title", Matchers.equalTo("optio dolor molestias sit"));
     }
 }
-
-/*
-
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/zubeyirselman/API_Calismalari.git
-git push -u origin main
- */
