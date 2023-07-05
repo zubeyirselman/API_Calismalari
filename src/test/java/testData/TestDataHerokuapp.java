@@ -2,6 +2,8 @@ package testData;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+
 public class TestDataHerokuapp {
 
     public int basariliStatusCode = 200;
@@ -39,4 +41,37 @@ public class TestDataHerokuapp {
 
         return expData;
     }
+
+    public HashMap bookingDatesMap(){
+
+        HashMap<String,Object> bookingDates = new HashMap<>();
+        bookingDates.put("checkin" , "2021-06-01");
+        bookingDates.put("checkout" , "2021-06-10");
+        return bookingDates;
+    }
+
+    public HashMap reqBodyMap(){
+
+        HashMap<String,Object> bookingMap = new HashMap<>();
+        bookingMap.put("firstname" , "Ali");
+        bookingMap.put("lastname" , "Bak");
+        bookingMap.put("totalprice" , 500.0);
+        bookingMap.put("depositpaid" , false);
+        bookingMap.put("bookingdates" , bookingDatesMap());
+        bookingMap.put("additionalneeds" , "wi-fi");
+
+        return bookingMap;
+    }
+
+
+    public HashMap<String,Object> expBodyMap (){
+
+        HashMap<String,Object> expBodyMap = new HashMap<>();
+
+        expBodyMap.put("bookingid" , 24.0);
+        expBodyMap.put("booking" , reqBodyMap());
+
+        return expBodyMap;
+    }
+
 }
